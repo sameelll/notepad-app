@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 
-import 'components/appBar.dart';
-import 'components/litsButton.dart';
-import 'components/searchBar.dart';
+// Components
+import 'components/AppBar.dart';
+import 'components/LitsButton.dart';
+import 'components/SearchBar.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -23,6 +24,7 @@ class _HomePageState extends State<HomePage> {
             const CustomAppBar(),
             // Search section
             const SearchBar(),
+            // Lits
             const LitsButtonContainer(),
             Row()
           ],
