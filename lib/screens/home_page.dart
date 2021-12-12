@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 // Components
 import 'components/AppBar.dart';
+import 'components/ListData.dart';
 import 'components/LitsButton.dart';
 import 'components/SearchBar.dart';
 
@@ -18,15 +19,16 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       backgroundColor: Colors.grey.shade400,
       body: SafeArea(
-        child: Column(
-          children: [
+        child: ListView(
+          children: const [
             // AppBar section
-            const CustomAppBar(),
+            CustomAppBar(),
             // Search section
-            const SearchBar(),
+            SearchBar(),
             // Lits
-            const LitsButtonContainer(),
-            Row()
+            LitsButtonContainer(),
+            // To do list
+            ListData()
           ],
         ),
       ),
