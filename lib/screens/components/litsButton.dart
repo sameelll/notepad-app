@@ -40,7 +40,7 @@ class LitsButton extends StatelessWidget {
 
   final String title;
   final VoidCallback press;
-  bool isActive;
+  final bool isActive;
 
   @override
   Widget build(BuildContext context) {

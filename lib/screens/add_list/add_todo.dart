@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:notepad_app/model/list_model.dart';
 
 class AddTodo extends StatefulWidget {
   const AddTodo({Key? key}) : super(key: key);
@@ -32,10 +33,53 @@ class _AddTodoState extends State<AddTodo> {
           ),
         ],
       ),
+      bottomNavigationBar: Container(
+        height: 100,
+        decoration: BoxDecoration(color: Colors.white, boxShadow: [
+          BoxShadow(
+              color: Colors.blue.withOpacity(0.5),
+              spreadRadius: 2.0,
+              blurRadius: 8.0)
+        ]),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Column(
+              children: [
+                Spacer(),
+                InkWell(
+                  onTap: () {},
+                  child: Container(
+                    decoration: BoxDecoration(
+                        color: Colors.white,
+                        shape: BoxShape.circle,
+                        boxShadow: [
+                          BoxShadow(
+                              color: Colors.blue.withOpacity(0.5),
+                              spreadRadius: 2.0,
+                              blurRadius: 8.0)
+                        ]),
+                    padding: const EdgeInsets.all(10.0),
+                    child: const Icon(
+                      Icons.check,
+                    ),
+                  ),
+                ),
+                Spacer(),
+                Row(
+                  children: List.generate(
+                      products.length, (index) => colorSelection(index)),
+                ),
+                Spacer(),
+              ],
+            ),
+          ],
+        ),
+      ),
       body: SafeArea(
         child: Column(
           children: [
-            // title
+            // Title
             TextFormField(
               style: const TextStyle(fontWeight: FontWeight.w600, fontSize: 20),
               decoration: const InputDecoration(
@@ -45,6 +89,7 @@ class _AddTodoState extends State<AddTodo> {
                   focusedBorder:
                       OutlineInputBorder(borderSide: BorderSide.none)),
             ),
+            // Description
             TextFormField(
               style: const TextStyle(fontSize: 16, color: Colors.black),
               decoration: const InputDecoration(
@@ -55,6 +100,22 @@ class _AddTodoState extends State<AddTodo> {
                       OutlineInputBorder(borderSide: BorderSide.none)),
             ),
           ],
+        ),
+      ),
+    );
+  }
+
+  Padding colorSelection(int index) {
+    return Padding(
+      padding: const EdgeInsets.only(left: 10.0),
+      child: InkWell(
+        onTap: () {},
+        child: Container(
+          height: 30,
+          width: 30,
+          decoration: BoxDecoration(
+              color: products[index].color,
+              borderRadius: BorderRadius.circular(10.0)),
         ),
       ),
     );
