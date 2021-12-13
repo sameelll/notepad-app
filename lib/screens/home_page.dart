@@ -31,7 +31,6 @@ class _HomePageState extends State<HomePage> {
             LitsButtonContainer(),
             // To do list
             ListData(),
-            
           ],
         ),
       ),
