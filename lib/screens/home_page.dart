@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 // Components
 import 'components/AppBar.dart';
+import 'components/BottomNavbar.dart';
 import 'components/ListData.dart';
 import 'components/LitsButton.dart';
 import 'components/SearchBar.dart';
@@ -18,6 +19,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.grey.shade400,
+      bottomNavigationBar: const BottomNavbar(),
       body: SafeArea(
         child: ListView(
           children: const [
@@ -28,7 +30,8 @@ class _HomePageState extends State<HomePage> {
             // Lits
             LitsButtonContainer(),
             // To do list
-            ListData()
+            ListData(),
+            
           ],
         ),
       ),
